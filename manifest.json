@@ -12,7 +12,7 @@
     ],
 	"content_scripts": [
 		{
-			"matches": ["*://mail.google.com/mail/u/0/*"],
+			"matches": ["*://mail.google.com/mail/u/*/*"],
 			"js": ["content_script.js"]
 		}
 	],
