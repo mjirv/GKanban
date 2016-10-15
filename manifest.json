@@ -1,7 +1,7 @@
 {
 	"name": "GKanban",
 	"version": "1.0",
-	"description": "Adds a Kanban board to your Gmail",
+	"description": "Adds a KanbanFlow board to your Gmail",
 	"manifest_version": 2,
 	"options_ui": {
 	    "page": "options.html",
@@ -15,5 +15,10 @@
 			"matches": ["*://mail.google.com/mail/u/0/*"],
 			"js": ["content_script.js"]
 		}
-	]
+	],
+	"icons": {
+		"16": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png"
+    }
 }
