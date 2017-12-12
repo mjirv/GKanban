@@ -1,6 +1,6 @@
 {
 	"name": "GKanban",
-	"version": "1.0.1",
+	"version": "1.0.3",
 	"description": "Adds a KanbanFlow board to your Gmail",
 	"manifest_version": 2,
 	"options_ui": {

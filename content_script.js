@@ -10,7 +10,9 @@ function inject_board() {
             iframe.style.border = "0";
             iframe.style.opacity = "0.9";
 
-            var container = document.getElementsByClassName('UI')[0];
+            while (typeof container == "undefined") {
+                var container = document.getElementsByClassName('UI')[0];
+            };
             container.insertBefore(iframe, container.firstChild);
 
             var h3 = document.createElement('h3');
