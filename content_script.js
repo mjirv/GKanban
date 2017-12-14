@@ -54,4 +54,4 @@ function inject_board() {
     );
 }
 
-inject_board();
+document.addEventListener('DOMContentLoaded', inject_board());
