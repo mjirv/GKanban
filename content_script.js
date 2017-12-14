@@ -12,8 +12,8 @@ function inject_board() {
 
             while (typeof container == "undefined") {
                 var container = document.getElementsByClassName('UI')[0];
+                container.insertBefore(iframe, container.firstChild);
             };
-            container.insertBefore(iframe, container.firstChild);
 
             var h3 = document.createElement('h3');
             h3.className = "Wr";
