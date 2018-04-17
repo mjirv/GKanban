@@ -1,19 +1,18 @@
 function inject_board() {
     chrome.storage.sync.get({
-            kanbanId: ""
+            kanbanId: "",
+            kanbanProvider: ""
         }, function(items) {
-            // Slightly different formats depending on whether we're using
-            // KanbanFlow or Airtable
-            var url = "";
+            /* Slightly different formats depending on whether we're using
+               KanbanFlow or Airtable */
+
+            // Default to KanbanFlow for backwards compatibility
+            var url = "https://kanbanflow.com/board/" + items.kanbanId + "#board-wrapper";
             var height = "360px";
 
-            if (items.kanbanProvider == "kanbanflow") {
-                var url = "https://kanbanflow.com/board/" + items.kanbanId + "#board-wrapper";
-                var height = "360px";
-            }
-            else if (items.kanbanProvider == "airtable") {
-                var url = "https://airtable.com/" + items.kanbanId + "#board-wrapper";
-                var height = "500px";
+            if (items.kanbanProvider == "airtable") {
+                url = "https://airtable.com/" + items.kanbanId + "#board-wrapper";
+                height = "500px";
             }
 
             var iframe = document.createElement('iframe');

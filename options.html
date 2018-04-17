@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head><title>GKanban - Options</title></head>
-<body>
-My Kanban board ID:
-<select id="kanban-provider">
-    <option value="kanbanflow">KanbanFlow</option>
-    <option value="airtable">Airtable</option>
-</select>
-<input type="text" id="kanban-id" width="300px">
-<button id="save">Save</button>
-<br />
-<p style="width: 350px; overflow-x: wrap">
-Note: You should copy this from the board URL. For example, in https://kanbanflow.com/board/2cf24dba5fb0a30e26e83b2ac5b9e, the ID is 2cf24dba5fb0a30e26e83b2ac5b9e
-</p>
-<p id="status"></p>
+    <head><title>GKanban - Options</title></head>
+    <body>
+        <p>
+            Kanban board service:
+            <select id="kanban-provider">
+                <option value="kanbanflow">KanbanFlow</option>
+                <option value="airtable">Airtable</option>
+            </select>
+        </p>
+        <p>
+            My Kanban board ID:
+            <input type="text" id="kanban-id" width="300px">
+        </p>
+        <button id="save">Save</button>
+        <br />
+        <p style="overflow-x: wrap">
+        Note: You should copy this from the board URL. For example, in https://kanbanflow.com/board/2cf24dba5fb0a30e26e83b2ac5b9e, the ID is 2cf24dba5fb0a30e26e83b2ac5b9e
+        </p>
+        <p id="status"></p>
 
-<script src="options.js"></script>
-</body>
+        <script src="options.js"></script>
+    </body>
 </html>
