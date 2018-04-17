@@ -2,11 +2,24 @@ function inject_board() {
     chrome.storage.sync.get({
             kanbanId: ""
         }, function(items) {
-            url = "https://kanbanflow.com/board/" + items.kanbanId + "#board-wrapper";
+            // Slightly different formats depending on whether we're using
+            // KanbanFlow or Airtable
+            var url = "";
+            var height = "360px";
+
+            if (items.kanbanProvider == "kanbanflow") {
+                var url = "https://kanbanflow.com/board/" + items.kanbanId + "#board-wrapper";
+                var height = "360px";
+            }
+            else if (items.kanbanProvider == "airtable") {
+                var url = "https://airtable.com/" + items.kanbanId + "#board-wrapper";
+                var height = "500px";
+            }
+
             var iframe = document.createElement('iframe');
             iframe.src = url;
             iframe.width = "100%";
-            iframe.height = "360px";
+            iframe.height = height;
             iframe.style.border = "0";
             iframe.style.opacity = "0.9";
 

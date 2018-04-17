@@ -1,8 +1,10 @@
 // Save options to chrome.storage
 function save_options() {
-    var kanban_id = document.getElementById('kanban_id').value;
+    var kanban_id = document.getElementById('kanban-id').value;
+    var kanban_provider = document.getElementById('kanban-provider').value;
     chrome.storage.sync.set({
-        kanbanId: kanban_id
+        kanbanId: kanban_id,
+        kanbanProvider: kanban_provider
     }, function() {
         // Update status to let user know options were saved.
         var status = document.getElementById('status');
@@ -20,7 +22,8 @@ function restore_options() {
     chrome.storage.sync.get({
         kanbanId: ""
     }, function(items) {
-        document.getElementById('kanban_id').value = items.kanbanId;
+        document.getElementById('kanban-id').value = items.kanbanId;
+        document.getElementById('kanban-provider').value = items.kanbanProvider;
     });
 }
 

@@ -3,7 +3,11 @@
 <head><title>GKanban - Options</title></head>
 <body>
 My Kanban board ID:
-<input type="text" id="kanban_id" width="300px">
+<select id="kanban-provider">
+    <option value="kanbanflow">KanbanFlow</option>
+    <option value="airtable">Airtable</option>
+</select>
+<input type="text" id="kanban-id" width="300px">
 <button id="save">Save</button>
 <br />
 <p style="width: 350px; overflow-x: wrap">
