@@ -10,4 +10,3 @@ Embed your Kanban board in GMail for more productivity.
 
 ### Notes
 * Currently only works on Macs for some reason
-* Currently only supports Airtable and KanbanFlow
