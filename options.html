@@ -7,10 +7,11 @@
             <select id="kanban-provider">
                 <option value="kanbanflow">KanbanFlow</option>
                 <option value="airtable">Airtable</option>
+                <option value="other">Other</option>
             </select>
         </p>
         <p>
-            My Kanban board ID:
+            My Kanban board ID (or URL for "other"):
             <input type="text" id="kanban-id" width="300px">
         </p>
         <button id="save">Save</button>
@@ -21,6 +22,8 @@
         <b>For example, for KanbanFlow:</b> in https://kanbanflow.com/board/2cf24dba5fb0a30e26e83b2ac5b9e, the ID is 2cf24dba5fb0a30e26e83b2ac5b9e
         <br /><br />
         <b>For Airtable:</b> in https://airtable.com/tblWx9ZZTikqV2QEF/viwu8ztOiXEFWw7nt, the ID is tblWx9ZZTikqV2QEF/viwu8ztOiXEFWw7nt
+        <br /><br />
+        <b>For other platforms:</b> just copy/paste the URL to your board!
         </p>
         <p id="status"></p>
 

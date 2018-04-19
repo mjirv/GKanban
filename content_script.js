@@ -14,6 +14,10 @@ function inject_board() {
                 url = "https://airtable.com/" + items.kanbanId + "#board-wrapper";
                 height = "500px";
             }
+            else if (items.kanbanProvider == "other") {
+                url = items.kanbanId;
+                height = "400px";
+            }
 
             var iframe = document.createElement('iframe');
             iframe.src = url;
