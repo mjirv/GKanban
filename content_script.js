@@ -1,8 +1,12 @@
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 function inject_board() {
     chrome.storage.sync.get({
             kanbanId: "",
             kanbanProvider: ""
-        }, function(items) {
+        }, async function(items) {
             /* Slightly different formats depending on whether we're using
                KanbanFlow or Airtable */
 
@@ -26,7 +30,11 @@ function inject_board() {
             iframe.style.border = "0";
             iframe.style.opacity = "0.9";
 
-            var container = document.getElementsByClassName('UI')[0];
+            var container;
+            while (container === undefined) {
+                container = document.getElementsByClassName('UI')[0];
+                await sleep(2000);
+            }
             container.insertBefore(iframe, container.firstChild);
 
             var h3 = document.createElement('h3');
